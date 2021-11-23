@@ -1,0 +1,25 @@
+{
+    "routes": [
+        {
+            "route": "/401",
+            "allowedRoles": [
+                "anonymous"
+            ]
+        },
+        {
+            "route": "/*",
+            "allowedRoles": [
+                "authenticated"
+            ]
+        }
+    ],
+    "responseOverrides": {
+        "401": {
+            "rewrite": "/401.html",
+            "statusCode": 302
+        },
+        "403": {
+            "rewrite": "/403.html"
+        }
+    }
+}
